@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
-const fileName = 'READMEsample.md'
+const fileName = './utils/README.md'
 // TODO: Create an array of questions for user input
 const questions = [
     "What is your project title?",
