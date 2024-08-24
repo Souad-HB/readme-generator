@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
-const fileName = './utils/README.md'
-// TODO: Create an array of questions for user input
+const fileName = 'SampleREADME.md';
+// Array of questions for user input
 const questions = [
     "What is your project title?",
     "What's is the description of your project?",
@@ -16,13 +16,13 @@ const questions = [
     "What is your Email address?",
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName,(data), (err) => 
         err ? console.error(err) : console.log('Your data has been logged!')); 
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer
     .prompt([
@@ -59,7 +59,7 @@ function init() {
         {
             type: 'list',
             message: questions[6],
-            choices: ['MIT License', 'GNU General Public License (GPL)', 'Apache License 2.0', 'BSD Licenses', 'Creative Commons Licenses', 'Mozilla Public License 2.0 (MPL 2.0)', 'Eclipse Public License (EPL)', 'none'], //check for more licenses
+            choices: ['MIT License', 'GNU General Public License (GPL)', 'Apache License 2.0', 'BSD Licenses', 'Creative Commons Licenses', 'Mozilla Public License 2.0 (MPL 2.0)', 'Eclipse Public License (EPL)', 'none'], 
             name: 'license',
         },
         {
