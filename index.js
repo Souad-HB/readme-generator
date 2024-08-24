@@ -2,16 +2,18 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
-const fileName = 'SampleREADME.md';
+const fileName = 'GeneratedREADME.md';
+
 // Array of questions for user input
 const questions = [
     "What is your project title?",
-    "What's is the description of your project?",
+    "What is the description of your project?",
     "What are the installation instructions for this project?",
-    "What is the usage information?",
+    "What are the instructions for usage?",
     "What are the contribution guidelines?",
     "What are some of the test instructions?",
-    "What is your preferred license?",
+    "Would you like to include a license?",
+    "What license would you like to include?",
     "What is your GitHub username?",
     "What is your Email address?",
 ];
@@ -19,7 +21,7 @@ const questions = [
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName,(data), (err) => 
-        err ? console.error(err) : console.log('Your data has been logged!')); 
+        err ? console.error(err) : console.log('SUCCESS! Your README has been generated')); 
 }
 
 // Function to initialize app
@@ -57,19 +59,32 @@ function init() {
             name: 'tests',
         },
         {
-            type: 'list',
+            type: 'confirm',
             message: questions[6],
-            choices: ['MIT License', 'GNU General Public License (GPL)', 'Apache License 2.0', 'BSD Licenses', 'Creative Commons Licenses', 'Mozilla Public License 2.0 (MPL 2.0)', 'Eclipse Public License (EPL)', 'none'], 
-            name: 'license',
+            name: 'confirmLicense',
+            default: false,
         },
         {
-            type: 'input',
+            type: 'list',
             message: questions[7],
-            name: 'github',
+            choices: ['MIT License', 'GNU General Public License (GPL)', 'Apache License 2.0', 'BSD Licenses', 'Creative Commons Licenses', 'Mozilla Public License 2.0 (MPL 2.0)', 'Eclipse Public License (EPL)'], 
+            name: 'license',
+            when: ({confirmLicense}) => {
+                if (confirmLicense) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             message: questions[8],
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: questions[9],
             name: 'email',
         },
     ])
