@@ -20,7 +20,7 @@ The below screenshot elaborates on what questions can be prompted. A project rep
 ![alt text](assets/images/Prompts.png)
 
 ## Demonstration
-Watch this [demo](https://app.screencastify.com/v3/watch/tXvjoGPMZqdSHYvTtunb) to see the README Generator in full action. 
+Watch this [demo](https://app.screencastify.com/v3/watch/bP8BdQxRLfE5QcON0G22) to see the README Generator in full action. 
 
 
 
