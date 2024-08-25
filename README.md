@@ -22,6 +22,10 @@ The below screenshot elaborates on what questions can be prompted. A project rep
 ## Demonstration
 Watch this [demo](https://watch.screencastify.com/v/j9qZfdL8D8RUU3MUZubc) to see the README Generator in full action. 
 
+## Questions
+If you have any questions, contact me at: souadsalahh@gmail.com
+
+GitHub profile: [GitHub](https://github.com/Souad-HB)
 
 
  
